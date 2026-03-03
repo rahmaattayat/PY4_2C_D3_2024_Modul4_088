@@ -6,22 +6,25 @@ class LogModel {
   final String date;
   final String description;
   final String category;
+  final String author; 
 
   LogModel({
     this.id,
     required this.title,
     required this.date,
     required this.description,
+    required this.author,
     this.category = 'Pribadi',
   });
 
   factory LogModel.fromMap(Map<String, dynamic> map) {
     return LogModel(
       id: map['_id'] as ObjectId?,
-      title: map['title'],
-      date: map['date'],
-      description: map['description'],
+      title: map['title'] ?? '',
+      date: map['date'] ?? '',
+      description: map['description'] ?? '',
       category: map['category'] ?? 'Pribadi',
+      author: map['author'] ?? 'system',
     );
   }
 
@@ -32,6 +35,7 @@ class LogModel {
       'date': date,
       'description': description,
       'category': category,
+      'author': author,
     };
   }
 }
