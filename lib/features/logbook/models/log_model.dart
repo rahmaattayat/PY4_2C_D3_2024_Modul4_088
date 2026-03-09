@@ -13,7 +13,7 @@ class LogModel {
     required this.title,
     required this.date,
     required this.description,
-    required this.author,
+    required this.author, 
     this.category = 'Pribadi',
   });
 
@@ -24,7 +24,7 @@ class LogModel {
       date: map['date'] ?? '',
       description: map['description'] ?? '',
       category: map['category'] ?? 'Pribadi',
-      author: map['author'] ?? 'system',
+      author: map['author'] ?? 'system', 
     );
   }
 
@@ -35,7 +35,7 @@ class LogModel {
       'date': date,
       'description': description,
       'category': category,
-      'author': author,
+      'author': author, 
     };
   }
 }
